@@ -1,0 +1,20 @@
+matching:
+  amount_tolerance: 0.01 # Max $ delta for tolerance match
+  date_tolerance_days: 2 # Max day delta for tolerance match
+  description_fuzzy_score: 75 # Min rapidfuzz score (0-100)
+
+  weights:
+    amount: 0.40
+    date: 0.30
+    description: 0.30
+
+confidence:
+  exact_match: 1.00
+  rule_match: 0.95
+  tolerance_match: 0.85
+  soft_match_min: 0.70
+  human_fallback: 0.70 # Anything below this → human review queue
+
+rag:
+  top_k: 5 # Number of ChromaDB results to retrieve
+  min_relevance_score: 0.60 # Discard retrieved docs below this cosine score

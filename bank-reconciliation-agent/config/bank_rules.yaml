@@ -1,0 +1,22 @@
+banks:
+  - name: Chase
+    swift_bic: CHASUS33
+    timing_offset_days: 1 # Chase posts same-day ACH with 1d delay in statement
+    description_prefix_strip: # Strip these from bank narrative before fuzzy match
+      - "INCOMING TRANSFER - "
+      - "OUTGOING WIRE - "
+    amount_sign_convention: standard # credits positive, debits negative
+
+  - name: BankOfAmerica
+    swift_bic: BOFAUS3N
+    timing_offset_days: 0
+    description_prefix_strip:
+      - "ACH CREDIT "
+      - "ACH DEBIT "
+    amount_sign_convention: standard
+
+  - name: Generic
+    swift_bic: null
+    timing_offset_days: 2
+    description_prefix_strip: []
+    amount_sign_convention: standard

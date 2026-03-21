@@ -1,0 +1,2308 @@
+{
+  "ledger": [
+    {
+      "id": "L-7E9E82B3",
+      "date": "2024-04-16",
+      "amount": "44307.98",
+      "description": "PAYROLL XYZ LLC",
+      "reference": "REF-1000",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-5C427F4A",
+      "date": "2024-06-27",
+      "amount": "19205.08",
+      "description": "ACH DEBIT XYZ LLC",
+      "reference": "REF-1001",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-E5A5B877",
+      "date": "2024-02-07",
+      "amount": "32806.34",
+      "description": "ACH CREDIT ABC CORP",
+      "reference": "REF-1002",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-F970F9C7",
+      "date": "2024-04-18",
+      "amount": "10949.87",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1003",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-0B6EF594",
+      "date": "2024-04-28",
+      "amount": "2520.42",
+      "description": "WIRE OUT ABC CORP",
+      "reference": "REF-1004",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-8D88E700",
+      "date": "2024-04-26",
+      "amount": "6675.62",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1005",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-D475CFE5",
+      "date": "2024-05-15",
+      "amount": "49394.74",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1006",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-13541041",
+      "date": "2024-04-23",
+      "amount": "30636.49",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1007",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-364DD8EA",
+      "date": "2024-04-19",
+      "amount": "41530.15",
+      "description": "PAYROLL GLOBEX",
+      "reference": "REF-1008",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-8E9EF244",
+      "date": "2024-02-10",
+      "amount": "37185.34",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1009",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-A7F99787",
+      "date": "2024-03-07",
+      "amount": "37591.32",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1010",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-A9A947C7",
+      "date": "2024-05-13",
+      "amount": "24235.0",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1011",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-33F007CB",
+      "date": "2024-04-22",
+      "amount": "3883.39",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1012",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-FB6D9365",
+      "date": "2024-03-10",
+      "amount": "16799.02",
+      "description": "PAYROLL ABC CORP",
+      "reference": "REF-1013",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-51D1810F",
+      "date": "2024-02-05",
+      "amount": "7550.02",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1014",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-D65F94E5",
+      "date": "2024-02-09",
+      "amount": "35323.89",
+      "description": "ACH CREDIT GLOBEX",
+      "reference": "REF-1015",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-EAB0AE16",
+      "date": "2024-04-14",
+      "amount": "16550.76",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1016",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-DA9F91FE",
+      "date": "2024-01-16",
+      "amount": "10349.65",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1017",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-A27F3E56",
+      "date": "2024-05-29",
+      "amount": "47303.64",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1018",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-AF876ABB",
+      "date": "2024-04-07",
+      "amount": "23854.22",
+      "description": "CHECK DEPOSIT ACME INC",
+      "reference": "REF-1019",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-0385DF9C",
+      "date": "2024-04-09",
+      "amount": "42673.86",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1020",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-0FB58014",
+      "date": "2024-05-19",
+      "amount": "39995.41",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1021",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-5877EBD0",
+      "date": "2024-02-26",
+      "amount": "13654.04",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1022",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-04E99CDF",
+      "date": "2024-04-09",
+      "amount": "16813.12",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1023",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-7D3108BB",
+      "date": "2024-02-12",
+      "amount": "42026.88",
+      "description": "WIRE OUT INITECH",
+      "reference": "REF-1024",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-A1DDA340",
+      "date": "2024-05-16",
+      "amount": "1358.05",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1025",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-DE5DE18B",
+      "date": "2024-05-24",
+      "amount": "33153.36",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1026",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-7CB5AD51",
+      "date": "2024-04-19",
+      "amount": "6793.62",
+      "description": "ACH DEBIT XYZ LLC",
+      "reference": "REF-1027",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-3CE9FD62",
+      "date": "2024-01-13",
+      "amount": "13015.21",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1028",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-8AF523E6",
+      "date": "2024-04-26",
+      "amount": "16349.02",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1029",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-3E48B786",
+      "date": "2024-04-17",
+      "amount": "12621.05",
+      "description": "ACH CREDIT GLOBEX",
+      "reference": "REF-1030",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-16AB9504",
+      "date": "2024-01-05",
+      "amount": "37453.72",
+      "description": "ACH CREDIT ACME INC",
+      "reference": "REF-1031",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-15EED346",
+      "date": "2024-02-27",
+      "amount": "32510.7",
+      "description": "VENDOR PMT ABC CORP",
+      "reference": "REF-1032",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-332785AD",
+      "date": "2024-01-08",
+      "amount": "47481.09",
+      "description": "WIRE OUT ABC CORP",
+      "reference": "REF-1033",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-AA92FA54",
+      "date": "2024-06-08",
+      "amount": "7627.59",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1034",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-4BE7504A",
+      "date": "2024-06-20",
+      "amount": "5728.33",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1035",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-CFAA8B69",
+      "date": "2024-06-28",
+      "amount": "12819.62",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1036",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-B0E20EDB",
+      "date": "2024-06-04",
+      "amount": "30366.3",
+      "description": "VENDOR PMT UMBRELLA CO",
+      "reference": "REF-1037",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-97FE6086",
+      "date": "2024-01-30",
+      "amount": "38891.82",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1038",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-C8BB5237",
+      "date": "2024-01-28",
+      "amount": "28938.45",
+      "description": "CHECK DEPOSIT INITECH",
+      "reference": "REF-1039",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-DFEFF2CF",
+      "date": "2024-06-22",
+      "amount": "47074.12",
+      "description": "WIRE OUT ABC CORP",
+      "reference": "REF-1040",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-22205C7D",
+      "date": "2024-05-31",
+      "amount": "12150.04",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1041",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-640D9DDA",
+      "date": "2024-06-24",
+      "amount": "39813.4",
+      "description": "PAYROLL ABC CORP",
+      "reference": "REF-1042",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-4F47A78A",
+      "date": "2024-03-29",
+      "amount": "33079.45",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1043",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-F7C9BEFD",
+      "date": "2024-06-14",
+      "amount": "42480.29",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1044",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-85CD2617",
+      "date": "2024-04-20",
+      "amount": "44579.83",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1045",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-470EA789",
+      "date": "2024-02-09",
+      "amount": "36692.43",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1046",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-D29DFC4A",
+      "date": "2024-06-06",
+      "amount": "23249.04",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1047",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-B23E4917",
+      "date": "2024-03-09",
+      "amount": "41538.24",
+      "description": "ACH CREDIT ACME INC",
+      "reference": "REF-1048",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-9382E85B",
+      "date": "2024-04-25",
+      "amount": "28496.78",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1049",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-4D6324BD",
+      "date": "2024-03-24",
+      "amount": "16826.47",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1050",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-6E5CDFC7",
+      "date": "2024-06-01",
+      "amount": "39893.64",
+      "description": "CHECK DEPOSIT INITECH",
+      "reference": "REF-1051",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-545BB93B",
+      "date": "2024-01-22",
+      "amount": "517.45",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1052",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-9751AD77",
+      "date": "2024-05-01",
+      "amount": "27763.26",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1053",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-FF7BBD93",
+      "date": "2024-02-26",
+      "amount": "39648.71",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1054",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-08DC1EF1",
+      "date": "2024-06-18",
+      "amount": "29081.96",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1055",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-385CC5E4",
+      "date": "2024-06-18",
+      "amount": "29081.96",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1055",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-49B755F2",
+      "date": "2024-05-15",
+      "amount": "17194.43",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1056",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-3F59E43A",
+      "date": "2024-05-15",
+      "amount": "17194.43",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1056",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-85DE6E82",
+      "date": "2024-03-25",
+      "amount": "17597.01",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1057",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-B8F948ED",
+      "date": "2024-03-25",
+      "amount": "17597.01",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1057",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-78DEF327",
+      "date": "2024-03-19",
+      "amount": "12577.67",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1058",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-36B9E7DA",
+      "date": "2024-03-19",
+      "amount": "12577.67",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1058",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-F62B92A5",
+      "date": "2024-02-19",
+      "amount": "15784.24",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1059",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-72039147",
+      "date": "2024-02-19",
+      "amount": "15784.24",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1059",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-E02E6519",
+      "date": "2024-06-25",
+      "amount": "9265.64",
+      "description": "WIRE OUT UMBRELLA CO",
+      "reference": "REF-1060",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-8A576A23",
+      "date": "2024-05-03",
+      "amount": "13832.22",
+      "description": "PAYROLL INITECH",
+      "reference": "REF-1061",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-2DFA89F4",
+      "date": "2024-06-01",
+      "amount": "14157.11",
+      "description": "ACH CREDIT XYZ LLC",
+      "reference": "REF-1062",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-3766A2FB",
+      "date": "2024-03-16",
+      "amount": "11381.88",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1063",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-84311B46",
+      "date": "2024-01-04",
+      "amount": "35403.84",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1064",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-F2B0BAD5",
+      "date": "2024-01-12",
+      "amount": "48715.0",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1065",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-6FDD6C82",
+      "date": "2024-06-27",
+      "amount": "47205.04",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1066",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-1B8B2C5F",
+      "date": "2024-01-27",
+      "amount": "43637.26",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1067",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-740B2281",
+      "date": "2024-04-30",
+      "amount": "23940.92",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1068",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-C037F3D3",
+      "date": "2024-01-14",
+      "amount": "12631.39",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1069",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-F64237CD",
+      "date": "2024-01-17",
+      "amount": "20041.37",
+      "description": "VENDOR PMT ABC CORP",
+      "reference": "REF-1070",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-FE9E99CB",
+      "date": "2024-05-24",
+      "amount": "47456.79",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1071",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-1773D7D8",
+      "date": "2024-06-01",
+      "amount": "39539.13",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1072",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-5F5F94B7",
+      "date": "2024-05-30",
+      "amount": "49501.66",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1073",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-BA831CEA",
+      "date": "2024-02-23",
+      "amount": "31279.5",
+      "description": "WIRE OUT XYZ LLC",
+      "reference": "REF-1074",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-D2858AA7",
+      "date": "2024-01-20",
+      "amount": "7835.07",
+      "description": "PAYROLL GLOBEX",
+      "reference": "REF-1075",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-E9FD987A",
+      "date": "2024-02-29",
+      "amount": "14412.36",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1076",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-582D06BC",
+      "date": "2024-03-08",
+      "amount": "39393.52",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1077",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-86F05BBC",
+      "date": "2024-02-27",
+      "amount": "32385.26",
+      "description": "ACH CREDIT ABC CORP",
+      "reference": "REF-1078",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-0E7151AC",
+      "date": "2024-06-01",
+      "amount": "37450.4",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1079",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-9648986A",
+      "date": "2024-03-18",
+      "amount": "34989.69",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1080",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-8DB0C42B",
+      "date": "2024-01-11",
+      "amount": "44472.25",
+      "description": "CHECK DEPOSIT ABC CORP",
+      "reference": "REF-1081",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-79CB0A9A",
+      "date": "2024-06-21",
+      "amount": "41799.57",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1082",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-D5F8298E",
+      "date": "2024-01-11",
+      "amount": "38157.82",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1083",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-774A369E",
+      "date": "2024-05-29",
+      "amount": "21799.89",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1084",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-F858C0BD",
+      "date": "2024-03-23",
+      "amount": "33509.97",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1085",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-22E78301",
+      "date": "2024-04-12",
+      "amount": "40680.17",
+      "description": "ACH CREDIT ACME INC",
+      "reference": "REF-1086",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-A870942B",
+      "date": "2024-01-30",
+      "amount": "48509.53",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1087",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-676BDB4F",
+      "date": "2024-04-15",
+      "amount": "2719.66",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1088",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-80C91632",
+      "date": "2024-02-22",
+      "amount": "13360.14",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1089",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-0137E0C3",
+      "date": "2024-01-08",
+      "amount": "48657.61",
+      "description": "VENDOR PMT XYZ LLC",
+      "reference": "REF-1090",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-607DD71C",
+      "date": "2024-01-04",
+      "amount": "27617.05",
+      "description": "ACH CREDIT GLOBEX",
+      "reference": "REF-1091",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-7C4510F3",
+      "date": "2024-02-09",
+      "amount": "24923.79",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1092",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-462715BC",
+      "date": "2024-04-30",
+      "amount": "12194.11",
+      "description": "WIRE OUT INITECH",
+      "reference": "REF-1093",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-37E62F00",
+      "date": "2024-02-04",
+      "amount": "43202.71",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1094",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-BE3216DA",
+      "date": "2024-01-01",
+      "amount": "14149.12",
+      "description": "PAYROLL UMBRELLA CO",
+      "reference": "REF-1095",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-67942A09",
+      "date": "2024-04-24",
+      "amount": "26933.64",
+      "description": "PAYROLL GLOBEX",
+      "reference": "REF-1096",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-435EE5BD",
+      "date": "2024-02-18",
+      "amount": "49038.92",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1097",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-5B017EFB",
+      "date": "2024-05-01",
+      "amount": "35264.34",
+      "description": "VENDOR PMT UMBRELLA CO",
+      "reference": "REF-1098",
+      "source_type": "csv"
+    },
+    {
+      "id": "L-39EE55F1",
+      "date": "2024-01-10",
+      "amount": "6321.05",
+      "description": "ACH CREDIT GLOBEX",
+      "reference": "REF-1099",
+      "source_type": "csv"
+    }
+  ],
+  "bank": [
+    {
+      "id": "B-FC66E38A",
+      "date": "2024-04-16",
+      "amount": "44307.98",
+      "description": "PAYROLL XYZ LLC",
+      "reference": "REF-1000",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-E49F8B46",
+      "date": "2024-06-27",
+      "amount": "19205.08",
+      "description": "ACH DEBIT XYZ LLC",
+      "reference": "REF-1001",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-16D972C3",
+      "date": "2024-02-07",
+      "amount": "32806.34",
+      "description": "ACH CREDIT ABC CORP",
+      "reference": "REF-1002",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-8E464A3A",
+      "date": "2024-04-18",
+      "amount": "10949.87",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1003",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-DA008DA0",
+      "date": "2024-04-28",
+      "amount": "2520.42",
+      "description": "WIRE OUT ABC CORP",
+      "reference": "REF-1004",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-8E7C1DC4",
+      "date": "2024-04-26",
+      "amount": "6675.62",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1005",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-3DFFE25D",
+      "date": "2024-05-15",
+      "amount": "49394.74",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1006",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-8675E173",
+      "date": "2024-04-23",
+      "amount": "30636.49",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1007",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-9575A3C7",
+      "date": "2024-04-19",
+      "amount": "41530.15",
+      "description": "PAYROLL GLOBEX",
+      "reference": "REF-1008",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-7D62DB76",
+      "date": "2024-02-10",
+      "amount": "37185.34",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1009",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-90D34D8F",
+      "date": "2024-03-07",
+      "amount": "37591.32",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1010",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-73D522F1",
+      "date": "2024-05-13",
+      "amount": "24235.0",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1011",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-BEB44210",
+      "date": "2024-04-22",
+      "amount": "3883.39",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1012",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-04E1120F",
+      "date": "2024-03-10",
+      "amount": "16799.02",
+      "description": "PAYROLL ABC CORP",
+      "reference": "REF-1013",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-5C9C99BD",
+      "date": "2024-02-05",
+      "amount": "7550.02",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1014",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-6D6A3359",
+      "date": "2024-02-09",
+      "amount": "35323.89",
+      "description": "ACH CREDIT GLOBEX",
+      "reference": "REF-1015",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A24CF825",
+      "date": "2024-04-14",
+      "amount": "16550.76",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1016",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A54D4C67",
+      "date": "2024-01-16",
+      "amount": "10349.65",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1017",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-898EC541",
+      "date": "2024-05-29",
+      "amount": "47303.64",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1018",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-949A7E3F",
+      "date": "2024-04-07",
+      "amount": "23854.22",
+      "description": "CHECK DEPOSIT ACME INC",
+      "reference": "REF-1019",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-3CBFCA7E",
+      "date": "2024-04-09",
+      "amount": "42673.86",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1020",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-7A536361",
+      "date": "2024-05-19",
+      "amount": "39995.41",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1021",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-8E4F9C1B",
+      "date": "2024-02-26",
+      "amount": "13654.04",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1022",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-710AF9B4",
+      "date": "2024-04-09",
+      "amount": "16813.12",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1023",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-0AE9ADEB",
+      "date": "2024-02-12",
+      "amount": "42026.88",
+      "description": "WIRE OUT INITECH",
+      "reference": "REF-1024",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-10197AE1",
+      "date": "2024-05-16",
+      "amount": "1358.05",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1025",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-816EF4D9",
+      "date": "2024-05-24",
+      "amount": "33153.36",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1026",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-B21C2788",
+      "date": "2024-04-19",
+      "amount": "6793.62",
+      "description": "ACH DEBIT XYZ LLC",
+      "reference": "REF-1027",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-BE282FC1",
+      "date": "2024-01-13",
+      "amount": "13015.21",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1028",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-9EE4AD7A",
+      "date": "2024-04-26",
+      "amount": "16349.02",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1029",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A9D70A91",
+      "date": "2024-04-17",
+      "amount": "12621.05",
+      "description": "ACH CREDIT GLOBEX",
+      "reference": "REF-1030",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-F708A980",
+      "date": "2024-01-05",
+      "amount": "37453.72",
+      "description": "ACH CREDIT ACME INC",
+      "reference": "REF-1031",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-D1D3BEE4",
+      "date": "2024-02-27",
+      "amount": "32510.7",
+      "description": "VENDOR PMT ABC CORP",
+      "reference": "REF-1032",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A244816F",
+      "date": "2024-01-08",
+      "amount": "47481.09",
+      "description": "WIRE OUT ABC CORP",
+      "reference": "REF-1033",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-CDF2C0CA",
+      "date": "2024-06-08",
+      "amount": "7627.59",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1034",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-7694157B",
+      "date": "2024-06-20",
+      "amount": "5728.33",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1035",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-CE2BDD81",
+      "date": "2024-06-28",
+      "amount": "12819.62",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1036",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-9C9BF7FD",
+      "date": "2024-06-04",
+      "amount": "30366.3",
+      "description": "VENDOR PMT UMBRELLA CO",
+      "reference": "REF-1037",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-E97CCAB1",
+      "date": "2024-01-30",
+      "amount": "38891.82",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1038",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-9D22A688",
+      "date": "2024-01-28",
+      "amount": "28938.45",
+      "description": "CHECK DEPOSIT INITECH",
+      "reference": "REF-1039",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-E50BCAB2",
+      "date": "2024-06-24",
+      "amount": "47074.12",
+      "description": "WIRE OUT ABC CORP",
+      "reference": "REF-1040",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-EE923322",
+      "date": "2024-06-03",
+      "amount": "12150.04",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1041",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-85A0B0DE",
+      "date": "2024-06-27",
+      "amount": "39813.4",
+      "description": "PAYROLL ABC CORP",
+      "reference": "REF-1042",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-0E3E924B",
+      "date": "2024-04-01",
+      "amount": "33079.45",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1043",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-2BAA6BE3",
+      "date": "2024-06-16",
+      "amount": "42480.29",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1044",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-F517EB99",
+      "date": "2024-04-22",
+      "amount": "44579.83",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1045",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-242BFC53",
+      "date": "2024-02-11",
+      "amount": "36692.43",
+      "description": "VENDOR PMT ACME INC",
+      "reference": "REF-1046",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-409CD3A9",
+      "date": "2024-06-09",
+      "amount": "23249.04",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1047",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-470F02DA",
+      "date": "2024-03-11",
+      "amount": "41538.24",
+      "description": "ACH CREDIT ACME INC",
+      "reference": "REF-1048",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A4ED339D",
+      "date": "2024-04-26",
+      "amount": "28496.78",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1049",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-48ACEF21",
+      "date": "2024-03-24",
+      "amount": "16826.96",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1050",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A9DF2512",
+      "date": "2024-06-01",
+      "amount": "39893.98",
+      "description": "CHECK DEPOSIT INITECH",
+      "reference": "REF-1051",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-54F0D8D4",
+      "date": "2024-01-22",
+      "amount": "518.39",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1052",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-B86E40FC",
+      "date": "2024-05-01",
+      "amount": "27763.51",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1053",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-52E21184",
+      "date": "2024-02-26",
+      "amount": "39648.81",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1054",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-9C006813",
+      "date": "2024-06-18",
+      "amount": "29081.96",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1055",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-27D18BA7",
+      "date": "2024-05-15",
+      "amount": "17194.43",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1056",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-5A8F32FE",
+      "date": "2024-03-25",
+      "amount": "17597.01",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1057",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-99C5AD9A",
+      "date": "2024-03-19",
+      "amount": "12577.67",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1058",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-06B36E7F",
+      "date": "2024-02-19",
+      "amount": "15784.24",
+      "description": "VENDOR PMT INITECH",
+      "reference": "REF-1059",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-1D40444F",
+      "date": "2024-01-12",
+      "amount": "48715.0",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1065",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-E153B91A",
+      "date": "2024-01-12",
+      "amount": "-48715.0",
+      "description": "REVERSAL PAYROLL ACME INC",
+      "reference": "REV-REF-1065",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-86856EF3",
+      "date": "2024-06-27",
+      "amount": "47205.04",
+      "description": "VENDOR PMT GLOBEX",
+      "reference": "REF-1066",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-62067F62",
+      "date": "2024-06-27",
+      "amount": "-47205.04",
+      "description": "REVERSAL VENDOR PMT GLOBEX",
+      "reference": "REV-REF-1066",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-AE284568",
+      "date": "2024-01-27",
+      "amount": "43637.26",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1067",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-7C51933B",
+      "date": "2024-01-27",
+      "amount": "-43637.26",
+      "description": "REVERSAL PAYROLL ACME INC",
+      "reference": "REV-REF-1067",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-2AF73CAB",
+      "date": "2024-04-30",
+      "amount": "23940.92",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1068",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-C49C40E1",
+      "date": "2024-04-30",
+      "amount": "-23940.92",
+      "description": "REVERSAL CHECK DEPOSIT XYZ LLC",
+      "reference": "REV-REF-1068",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-71DCA3D6",
+      "date": "2024-01-14",
+      "amount": "12631.39",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1069",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-4C3A2388",
+      "date": "2024-01-14",
+      "amount": "-12631.39",
+      "description": "REVERSAL ACH DEBIT ABC CORP",
+      "reference": "REV-REF-1069",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-66675781",
+      "date": "2024-01-17",
+      "amount": "20041.68",
+      "description": "WIRE OUT XYZ LLC",
+      "reference": "REF-1070",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-02CB79D4",
+      "date": "2024-05-24",
+      "amount": "47458.77",
+      "description": "ACH DEBIT INITECH",
+      "reference": "REF-1071",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-952ED927",
+      "date": "2024-06-02",
+      "amount": "39540.23",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1072",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-17BF1158",
+      "date": "2024-06-01",
+      "amount": "49501.93",
+      "description": "VENDOR PMT ABC CORP",
+      "reference": "REF-1073",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-CCB8F49A",
+      "date": "2024-02-25",
+      "amount": "31280.14",
+      "description": "WIRE OUT INITECH",
+      "reference": "REF-1074",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-F4BA48A6",
+      "date": "2024-01-23",
+      "amount": "7834.87",
+      "description": "CHECK DEPOSIT ABC CORP",
+      "reference": "REF-1075",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-7E5BB381",
+      "date": "2024-03-02",
+      "amount": "14413.17",
+      "description": "VENDOR PMT XYZ LLC",
+      "reference": "REF-1076",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-39DA43BC",
+      "date": "2024-03-13",
+      "amount": "39393.88",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1077",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-4D9D5CBB",
+      "date": "2024-02-29",
+      "amount": "32386.57",
+      "description": "WIRE OUT ACME INC",
+      "reference": "REF-1078",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-C8C212DD",
+      "date": "2024-06-05",
+      "amount": "37452.08",
+      "description": "ACH DEBIT UMBRELLA CO",
+      "reference": "REF-1079",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-473466DA",
+      "date": "2024-03-20",
+      "amount": "34989.69",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1080",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-D091AEB0",
+      "date": "2024-01-16",
+      "amount": "44471.54",
+      "description": "ACH CREDIT XYZ LLC",
+      "reference": "REF-1081",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A2BAEE53",
+      "date": "2024-06-25",
+      "amount": "41799.92",
+      "description": "CHECK DEPOSIT INITECH",
+      "reference": "REF-1082",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-85D4AF00",
+      "date": "2024-01-12",
+      "amount": "38157.70",
+      "description": "CHECK DEPOSIT XYZ LLC",
+      "reference": "REF-1083",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-B3DC3093",
+      "date": "2024-06-01",
+      "amount": "21801.77",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1084",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-3E3C7D4A",
+      "date": "2024-03-24",
+      "amount": "33509.29",
+      "description": "CHECK DEPOSIT UMBRELLA CO",
+      "reference": "REF-1085",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-8ADF886F",
+      "date": "2024-04-16",
+      "amount": "40678.32",
+      "description": "CHECK DEPOSIT ACME INC",
+      "reference": "REF-1086",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-5EE8F61E",
+      "date": "2024-02-02",
+      "amount": "48510.99",
+      "description": "PAYROLL GLOBEX",
+      "reference": "REF-1087",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-66DD8F6C",
+      "date": "2024-04-19",
+      "amount": "2719.11",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1088",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-6308C1F1",
+      "date": "2024-02-23",
+      "amount": "13361.85",
+      "description": "ACH DEBIT ABC CORP",
+      "reference": "REF-1089",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-8716F48C",
+      "date": "2024-01-12",
+      "amount": "48658.81",
+      "description": "CHECK DEPOSIT INITECH",
+      "reference": "REF-1090",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-D1CC2DB1",
+      "date": "2024-01-04",
+      "amount": "27615.95",
+      "description": "ACH CREDIT UMBRELLA CO",
+      "reference": "REF-1091",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-7B4FFB12",
+      "date": "2024-02-14",
+      "amount": "24922.96",
+      "description": "ACH DEBIT GLOBEX",
+      "reference": "REF-1092",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A40DC39C",
+      "date": "2024-05-04",
+      "amount": "12192.69",
+      "description": "PAYROLL UMBRELLA CO",
+      "reference": "REF-1093",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-D166D264",
+      "date": "2024-02-06",
+      "amount": "43203.80",
+      "description": "PAYROLL ACME INC",
+      "reference": "REF-1094",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A3DE4C14",
+      "date": "2024-01-03",
+      "amount": "14150.47",
+      "description": "ACH DEBIT XYZ LLC",
+      "reference": "REF-1095",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-C8FD7EA4",
+      "date": "2024-04-26",
+      "amount": "26932.97",
+      "description": "ACH DEBIT ACME INC",
+      "reference": "REF-1096",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-0CE3CB3F",
+      "date": "2024-02-19",
+      "amount": "49039.21",
+      "description": "ACH CREDIT ACME INC",
+      "reference": "REF-1097",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-EE90BD1C",
+      "date": "2024-05-04",
+      "amount": "35263.88",
+      "description": "WIRE OUT GLOBEX",
+      "reference": "REF-1098",
+      "source_type": "csv"
+    },
+    {
+      "id": "B-A44C6C1F",
+      "date": "2024-01-14",
+      "amount": "6320.38",
+      "description": "ACH CREDIT INITECH",
+      "reference": "REF-1099",
+      "source_type": "csv"
+    }
+  ],
+  "labels": [
+    {
+      "ledger_id": "L-7E9E82B3",
+      "bank_id": "B-FC66E38A",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5C427F4A",
+      "bank_id": "B-E49F8B46",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-E5A5B877",
+      "bank_id": "B-16D972C3",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F970F9C7",
+      "bank_id": "B-8E464A3A",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-0B6EF594",
+      "bank_id": "B-DA008DA0",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8D88E700",
+      "bank_id": "B-8E7C1DC4",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D475CFE5",
+      "bank_id": "B-3DFFE25D",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-13541041",
+      "bank_id": "B-8675E173",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-364DD8EA",
+      "bank_id": "B-9575A3C7",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8E9EF244",
+      "bank_id": "B-7D62DB76",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A7F99787",
+      "bank_id": "B-90D34D8F",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A9A947C7",
+      "bank_id": "B-73D522F1",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-33F007CB",
+      "bank_id": "B-BEB44210",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-FB6D9365",
+      "bank_id": "B-04E1120F",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-51D1810F",
+      "bank_id": "B-5C9C99BD",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D65F94E5",
+      "bank_id": "B-6D6A3359",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-EAB0AE16",
+      "bank_id": "B-A24CF825",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-DA9F91FE",
+      "bank_id": "B-A54D4C67",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A27F3E56",
+      "bank_id": "B-898EC541",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-AF876ABB",
+      "bank_id": "B-949A7E3F",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-0385DF9C",
+      "bank_id": "B-3CBFCA7E",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-0FB58014",
+      "bank_id": "B-7A536361",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5877EBD0",
+      "bank_id": "B-8E4F9C1B",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-04E99CDF",
+      "bank_id": "B-710AF9B4",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-7D3108BB",
+      "bank_id": "B-0AE9ADEB",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A1DDA340",
+      "bank_id": "B-10197AE1",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-DE5DE18B",
+      "bank_id": "B-816EF4D9",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-7CB5AD51",
+      "bank_id": "B-B21C2788",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3CE9FD62",
+      "bank_id": "B-BE282FC1",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8AF523E6",
+      "bank_id": "B-9EE4AD7A",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3E48B786",
+      "bank_id": "B-A9D70A91",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-16AB9504",
+      "bank_id": "B-F708A980",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-15EED346",
+      "bank_id": "B-D1D3BEE4",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-332785AD",
+      "bank_id": "B-A244816F",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-AA92FA54",
+      "bank_id": "B-CDF2C0CA",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-4BE7504A",
+      "bank_id": "B-7694157B",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-CFAA8B69",
+      "bank_id": "B-CE2BDD81",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-B0E20EDB",
+      "bank_id": "B-9C9BF7FD",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-97FE6086",
+      "bank_id": "B-E97CCAB1",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C8BB5237",
+      "bank_id": "B-9D22A688",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-DFEFF2CF",
+      "bank_id": "B-E50BCAB2",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-22205C7D",
+      "bank_id": "B-EE923322",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-640D9DDA",
+      "bank_id": "B-85A0B0DE",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-4F47A78A",
+      "bank_id": "B-0E3E924B",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F7C9BEFD",
+      "bank_id": "B-2BAA6BE3",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-85CD2617",
+      "bank_id": "B-F517EB99",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-470EA789",
+      "bank_id": "B-242BFC53",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D29DFC4A",
+      "bank_id": "B-409CD3A9",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-B23E4917",
+      "bank_id": "B-470F02DA",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9382E85B",
+      "bank_id": "B-A4ED339D",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-4D6324BD",
+      "bank_id": "B-48ACEF21",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-6E5CDFC7",
+      "bank_id": "B-A9DF2512",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-545BB93B",
+      "bank_id": "B-54F0D8D4",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9751AD77",
+      "bank_id": "B-B86E40FC",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-FF7BBD93",
+      "bank_id": "B-52E21184",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-08DC1EF1",
+      "bank_id": "B-9C006813",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-385CC5E4",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-49B755F2",
+      "bank_id": "B-27D18BA7",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3F59E43A",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-85DE6E82",
+      "bank_id": "B-5A8F32FE",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-B8F948ED",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-78DEF327",
+      "bank_id": "B-99C5AD9A",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-36B9E7DA",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-F62B92A5",
+      "bank_id": "B-06B36E7F",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-72039147",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-E02E6519",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-8A576A23",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-2DFA89F4",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-3766A2FB",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-84311B46",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-F2B0BAD5",
+      "bank_id": "B-1D40444F",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-E153B91A",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-6FDD6C82",
+      "bank_id": "B-86856EF3",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-62067F62",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-1B8B2C5F",
+      "bank_id": "B-AE284568",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-7C51933B",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-740B2281",
+      "bank_id": "B-2AF73CAB",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-C49C40E1",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-C037F3D3",
+      "bank_id": "B-71DCA3D6",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-4C3A2388",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-F64237CD",
+      "bank_id": "B-66675781",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-FE9E99CB",
+      "bank_id": "B-02CB79D4",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-1773D7D8",
+      "bank_id": "B-952ED927",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5F5F94B7",
+      "bank_id": "B-17BF1158",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-BA831CEA",
+      "bank_id": "B-CCB8F49A",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D2858AA7",
+      "bank_id": "B-F4BA48A6",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-E9FD987A",
+      "bank_id": "B-7E5BB381",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-582D06BC",
+      "bank_id": "B-39DA43BC",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-86F05BBC",
+      "bank_id": "B-4D9D5CBB",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-0E7151AC",
+      "bank_id": "B-C8C212DD",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9648986A",
+      "bank_id": "B-473466DA",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8DB0C42B",
+      "bank_id": "B-D091AEB0",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-79CB0A9A",
+      "bank_id": "B-A2BAEE53",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D5F8298E",
+      "bank_id": "B-85D4AF00",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-774A369E",
+      "bank_id": "B-B3DC3093",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F858C0BD",
+      "bank_id": "B-3E3C7D4A",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-22E78301",
+      "bank_id": "B-8ADF886F",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A870942B",
+      "bank_id": "B-5EE8F61E",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-676BDB4F",
+      "bank_id": "B-66DD8F6C",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-80C91632",
+      "bank_id": "B-6308C1F1",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-0137E0C3",
+      "bank_id": "B-8716F48C",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-607DD71C",
+      "bank_id": "B-D1CC2DB1",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-7C4510F3",
+      "bank_id": "B-7B4FFB12",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-462715BC",
+      "bank_id": "B-A40DC39C",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-37E62F00",
+      "bank_id": "B-D166D264",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-BE3216DA",
+      "bank_id": "B-A3DE4C14",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-67942A09",
+      "bank_id": "B-C8FD7EA4",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-435EE5BD",
+      "bank_id": "B-0CE3CB3F",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5B017EFB",
+      "bank_id": "B-EE90BD1C",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-39EE55F1",
+      "bank_id": "B-A44C6C1F",
+      "category": "edge_case",
+      "should_match": true
+    }
+  ]
+}

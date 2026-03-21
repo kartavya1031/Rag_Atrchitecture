@@ -1,0 +1,684 @@
+{
+  "smoke": [
+    {
+      "ledger_id": "L-5B2D9CF8",
+      "bank_id": "B-57BA9013",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3F6C1524",
+      "bank_id": "B-A08A2497",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-44B39FC6",
+      "bank_id": "B-194037A8",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-B806120F",
+      "bank_id": "B-C9FA72D9",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-477DF2DE",
+      "bank_id": "B-89A64A72",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-E0979057",
+      "bank_id": "B-3D0E51BF",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-11383FD3",
+      "bank_id": "B-87237623",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-1BAEB260",
+      "bank_id": "B-7A82BE3E",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9953F4C5",
+      "bank_id": "B-AD923F36",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8584C7F5",
+      "bank_id": "B-AB093866",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8684C2C4",
+      "bank_id": "B-0A77C1AB",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-677BCFB1",
+      "bank_id": "B-1D4EFFBA",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-E57B4AAC",
+      "bank_id": "B-75959F6E",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-2CD347A4",
+      "bank_id": "B-380B293D",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F092FEAD",
+      "bank_id": "B-C6CAC080",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-69A26DFD",
+      "bank_id": "B-EF4BB89A",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-628C6D02",
+      "bank_id": "B-3E1D4CA7",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-1A503A72",
+      "bank_id": "B-CAD38353",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3B141154",
+      "bank_id": "B-CF4F2D84",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9978D8A6",
+      "bank_id": "B-F1EF626B",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3EA5845E",
+      "bank_id": "B-6EC241B6",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-00CB59EE",
+      "bank_id": "B-015FD076",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3F447985",
+      "bank_id": "B-EB553F68",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-79A34AE7",
+      "bank_id": "B-C0AC11C4",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-2DBE6CDA",
+      "bank_id": "B-1CDB78B6",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-69FCDCBB",
+      "bank_id": "B-CCD14C67",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-516A218F",
+      "bank_id": "B-880B5AB9",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-1CBC9426",
+      "bank_id": "B-78AC86AD",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-CBECDFEB",
+      "bank_id": "B-45B4D1B0",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5E2850C7",
+      "bank_id": "B-A796025F",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-820B234B",
+      "bank_id": "B-50AF3A8C",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-2F9B10B4",
+      "bank_id": "B-0CE57636",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-6E574ABE",
+      "bank_id": "B-B101B3E6",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-17E59EC1",
+      "bank_id": "B-9CD077B2",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A00E9C09",
+      "bank_id": "B-D9AA9BA6",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-4BE14FCC",
+      "bank_id": "B-3E993920",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A2B41FFD",
+      "bank_id": "B-EA4DB151",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-E52914BF",
+      "bank_id": "B-3B72E61C",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A7681DAC",
+      "bank_id": "B-69FF0631",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-48E27C75",
+      "bank_id": "B-B8CFA0DF",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C88910FD",
+      "bank_id": "B-3E690923",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-855FF084",
+      "bank_id": "B-0721FBC9",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D15E2822",
+      "bank_id": "B-F4AC450A",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-497F7121",
+      "bank_id": "B-1489FC9A",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5EFC6A14",
+      "bank_id": "B-1E86EEC0",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C233C468",
+      "bank_id": "B-C3CDC65D",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9EE12417",
+      "bank_id": "B-D304A0C2",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A1F75273",
+      "bank_id": "B-0280A964",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-4CEFC4A9",
+      "bank_id": "B-ACA71A9D",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-0F396958",
+      "bank_id": "B-E6452A5B",
+      "category": "timing_diff",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-1D0C3AE9",
+      "bank_id": "B-2A837075",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C280C246",
+      "bank_id": "B-F6E29077",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-209EFA2E",
+      "bank_id": "B-1D40E011",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8EB70179",
+      "bank_id": "B-DACBD884",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-098CA98D",
+      "bank_id": "B-54BAA374",
+      "category": "rounding",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8BB065EB",
+      "bank_id": "B-3A002D85",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-298A3A27",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-9C83C857",
+      "bank_id": "B-F55EF64A",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-DA4939B5",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-8C0CAB60",
+      "bank_id": "B-2E758887",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-855E5177",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-30E2A573",
+      "bank_id": "B-28351D9A",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-FE8D5424",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-A7797EB7",
+      "bank_id": "B-9A8925D4",
+      "category": "duplicate",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C4F9AB77",
+      "bank_id": null,
+      "category": "duplicate_extra",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-12CCB6B0",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-6ABE85AB",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-9D8DD207",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-C26F20A8",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-D044AB23",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-9033D1B1",
+      "bank_id": "B-DC1C0C60",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-6A3ACB42",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-FE092820",
+      "bank_id": "B-EF03B888",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-237A5CF8",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-E3D1BD7E",
+      "bank_id": "B-0553948D",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-82CA5E79",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-8004DA02",
+      "bank_id": "B-FD464B9A",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-6D992EC0",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-714DDB48",
+      "bank_id": "B-E2F17A07",
+      "category": "reversal",
+      "should_match": true
+    },
+    {
+      "ledger_id": null,
+      "bank_id": "B-5993B32F",
+      "category": "reversal_credit",
+      "should_match": false
+    },
+    {
+      "ledger_id": "L-2681EBFA",
+      "bank_id": "B-809414CD",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-06BAE1F8",
+      "bank_id": "B-78ABD9FA",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-D87838AB",
+      "bank_id": "B-4A111992",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-76E4A76C",
+      "bank_id": "B-AF944B6C",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C9B85D5B",
+      "bank_id": "B-8DFF197A",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-B7E7C055",
+      "bank_id": "B-CAA31D4A",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-A49CEC69",
+      "bank_id": "B-58A7FC5F",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-21E9593F",
+      "bank_id": "B-01061A00",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5A827571",
+      "bank_id": "B-4A78DA7E",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-8FD2FD8B",
+      "bank_id": "B-97E214C3",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-29DE5E93",
+      "bank_id": "B-9688EFA6",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F228B252",
+      "bank_id": "B-F7CA4F4F",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3FD6CFDB",
+      "bank_id": "B-7EDD129E",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-34AF8279",
+      "bank_id": "B-FF3CA9A5",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F7A49A90",
+      "bank_id": "B-0F586F53",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-14B63FCB",
+      "bank_id": "B-0961F563",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-2C2AD261",
+      "bank_id": "B-778B8F74",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-3F780504",
+      "bank_id": "B-076B8D86",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-CD655F1D",
+      "bank_id": "B-5AB8197E",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-02960A11",
+      "bank_id": "B-F8D86DBD",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-9FDB8941",
+      "bank_id": "B-9B4869A0",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-92C4ECF9",
+      "bank_id": "B-6463119A",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-596AAFAE",
+      "bank_id": "B-CF481D7D",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-5D1DFCBC",
+      "bank_id": "B-0AAF25BC",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-F52AB129",
+      "bank_id": "B-B03F2E9A",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-539A7520",
+      "bank_id": "B-5E5DC888",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-7C409CE7",
+      "bank_id": "B-91E7A0FA",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-2CFF648F",
+      "bank_id": "B-9540D728",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-498DFA79",
+      "bank_id": "B-140C68EB",
+      "category": "edge_case",
+      "should_match": true
+    },
+    {
+      "ledger_id": "L-C4A5EDA0",
+      "bank_id": "B-06FD5AAC",
+      "category": "edge_case",
+      "should_match": true
+    }
+  ],
+  "adversarial": [
+    {
+      "ledger_id": "ADV-1",
+      "bank_id": "ADV-B2",
+      "category": "exact",
+      "should_match": true
+    },
+    {
+      "ledger_id": "ADV-2",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    },
+    {
+      "ledger_id": "ADV-3",
+      "bank_id": null,
+      "category": "missing",
+      "should_match": false
+    }
+  ]
+}
