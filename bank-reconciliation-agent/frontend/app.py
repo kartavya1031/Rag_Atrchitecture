@@ -14,7 +14,7 @@ import streamlit as st
 # Config
 # ---------------------------------------------------------------------------
 
-API_BASE = "http://127.0.0.1:8000"
+API_BASE = "http://127.0.0.1:8001"
 
 st.set_page_config(
     page_title="SmartBots Reconciliation Agent",
@@ -304,31 +304,44 @@ elif page == "Knowledge Base Search":
 
     fname_filter = st.text_input("Filter by filename (optional)", placeholder="e.g. attention-paper.pdf")
 
+    generate_summary = st.checkbox("Generate AI Summary", value=True, help="Use LLM to synthesize a summary from the retrieved chunks")
+
     if query and st.button("Search", type="primary"):
-        with st.spinner("Searching..."):
+        with st.spinner("Searching..." if not generate_summary else "Searching & summarizing..."):
             try:
-                params = {"q": query, "n": n_results}
+                params = {"q": query, "n": n_results, "summarize": str(generate_summary).lower()}
                 if fname_filter:
                     params["filename"] = fname_filter
 
                 r = _api("get", "/knowledge-base/search", params=params)
                 if r.status_code == 200:
-                    results = r.json()
-                    if not results:
+                    data = r.json()
+                    chunks = data.get("chunks", [])
+                    summary = data.get("summary")
+
+                    if not chunks:
                         st.info("No results found.")
                     else:
-                        for i, res in enumerate(results, 1):
+                        # Show AI Summary first
+                        if summary:
+                            st.subheader("📋 AI Summary")
+                            st.markdown(summary)
+                            st.markdown("---")
+
+                        # Show individual chunks in an expander
+                        st.subheader(f"📄 Retrieved Chunks ({len(chunks)})")
+                        for i, res in enumerate(chunks, 1):
                             meta = res.get("metadata", {})
                             sim = res.get("similarity", 0)
-                            st.markdown(f"### Result {i}  (similarity: {sim:.4f})")
-                            st.markdown(f"**Source:** {meta.get('filename', 'N/A')} — chunk {meta.get('chunk_index', '?')}/{meta.get('total_chunks', '?')}")
-                            st.text_area(
-                                f"Content (result {i})",
-                                value=res.get("document", ""),
-                                height=200,
-                                key=f"result_{i}",
-                            )
-                            st.markdown("---")
+                            source = meta.get('filename', 'N/A')
+                            chunk_label = f"chunk {meta.get('chunk_index', '?')}/{meta.get('total_chunks', '?')}"
+                            with st.expander(f"Result {i} — {source} ({chunk_label}) · similarity: {sim:.4f}"):
+                                st.text_area(
+                                    f"Content",
+                                    value=res.get("document", ""),
+                                    height=200,
+                                    key=f"result_{i}",
+                                )
                 else:
                     st.error(f"Search failed: {r.text}")
             except requests.ConnectionError:

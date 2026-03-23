@@ -13,12 +13,15 @@ from src.ingestion.parsers.csv_parser import parse_csv
 from src.ingestion.parsers.excel_parser import parse_excel
 from src.ingestion.schema import Transaction
 from src.matching_engine.ledger_bank_aligner import align
+from openai import OpenAI
+
 from src.rag.knowledge_base import (
     delete_document,
     ingest_document,
     list_documents,
     query_knowledge_base,
 )
+from src.utils.config import get_env
 
 app = FastAPI(title="SmartBots Bank Reconciliation", version="0.1.0")
 
@@ -286,6 +289,54 @@ async def kb_search(
     q: str = Query(..., min_length=1),
     n: int = Query(5, ge=1, le=50),
     filename: str | None = Query(None),
+    summarize: bool = Query(False),
 ):
-    """Search the knowledge base for relevant chunks."""
-    return query_knowledge_base(q, n_results=n, filename_filter=filename)
+    """Search the knowledge base for relevant chunks, optionally with an LLM summary."""
+    chunks = query_knowledge_base(q, n_results=n, filename_filter=filename)
+
+    if not summarize or not chunks:
+        return {"chunks": chunks, "summary": None}
+
+    # Build context from retrieved chunks for the LLM
+    context_parts = []
+    for i, c in enumerate(chunks, 1):
+        meta = c.get("metadata", {})
+        source = meta.get("filename", "unknown")
+        context_parts.append(
+            f"[Source: {source}, chunk {meta.get('chunk_index', '?')}/{meta.get('total_chunks', '?')}, "
+            f"similarity: {c.get('similarity', 0):.4f}]\n{c.get('document', '')}"
+        )
+    context_block = "\n\n---\n\n".join(context_parts)
+
+    try:
+        client = OpenAI(api_key=get_env("OPENAI_API_KEY"))
+        model = get_env("OPENAI_CHAT_MODEL", "gpt-4o")
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a helpful assistant for a bank reconciliation system. "
+                        "Given the user's query and retrieved document chunks, provide a "
+                        "clear, concise summary that directly answers the query. "
+                        "Cite the source filenames when referencing specific information. "
+                        "If the chunks don't contain relevant information, say so."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": (
+                        f"Query: {q}\n\n"
+                        f"Retrieved documents:\n\n{context_block}"
+                    ),
+                },
+            ],
+            temperature=0.3,
+            max_tokens=1024,
+        )
+        summary = response.choices[0].message.content
+    except Exception as e:
+        summary = f"Summary generation failed: {e}"
+
+    return {"chunks": chunks, "summary": summary}
