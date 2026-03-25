@@ -12,8 +12,9 @@ from pydantic import BaseModel
 from src.ingestion.parsers.csv_parser import parse_csv
 from src.ingestion.parsers.excel_parser import parse_excel
 from src.ingestion.schema import Transaction
+from src.ingestion.enricher import enrich_transactions
 from src.matching_engine.ledger_bank_aligner import align
-from openai import OpenAI
+from src.llm.client import get_openai_client, get_model
 
 from src.rag.knowledge_base import (
     delete_document,
@@ -21,7 +22,6 @@ from src.rag.knowledge_base import (
     list_documents,
     query_knowledge_base,
 )
-from src.utils.config import get_env
 
 app = FastAPI(title="SmartBots Bank Reconciliation", version="0.1.0")
 
@@ -133,7 +133,11 @@ async def reconcile(
                 except Exception:
                     ledger_transactions = []
 
-        result = align(ledger_transactions, bank_transactions, bank_name=bank_name)
+        result = align(
+            enrich_transactions(ledger_transactions, bank_name),
+            enrich_transactions(bank_transactions, bank_name),
+            bank_name=bank_name,
+        )
 
         # Build exception queue
         exceptions_dict: dict[str, dict[str, Any]] = {}
@@ -309,8 +313,8 @@ async def kb_search(
     context_block = "\n\n---\n\n".join(context_parts)
 
     try:
-        client = OpenAI(api_key=get_env("OPENAI_API_KEY"))
-        model = get_env("OPENAI_CHAT_MODEL", "gpt-4o")
+        client = get_openai_client()
+        model = get_model()
         response = client.chat.completions.create(
             model=model,
             messages=[

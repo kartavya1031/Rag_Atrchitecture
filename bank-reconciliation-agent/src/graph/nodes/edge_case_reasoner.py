@@ -1,19 +1,19 @@
 """Edge-case reasoner node — chain-of-thought for reversals, partial payments, etc."""
 
 import json
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from openai import OpenAI
-
 from src.graph.state import ReconciliationState
+from src.llm.client import get_openai_client, get_model
 from src.matching_engine.models import MatchResult
 from src.rag.retriever import retrieve
-from src.utils.config import get_env
 
 _PROMPT_PATH = Path(__file__).resolve().parent.parent.parent / "llm" / "prompts" / "edge_case_reasoning.txt"
 
 
+@lru_cache(maxsize=1)
 def _load_prompt() -> str:
     return _PROMPT_PATH.read_text(encoding="utf-8")
 
@@ -26,8 +26,8 @@ def edge_case_reasoner(state: ReconciliationState) -> dict[str, Any]:
     if not unmatched_ledger and not unmatched_bank:
         return {}
 
-    client = OpenAI(api_key=get_env("OPENAI_API_KEY"))
-    model = get_env("OPENAI_MODEL", "gpt-4o")
+    client = get_openai_client()
+    model = get_model()
 
     # Retrieve relevant policy / SOP context
     rag_results = retrieve(

@@ -32,10 +32,16 @@ COLLECTIONS = {
 }
 
 
+_chroma_client: chromadb.ClientAPI | None = None
+
+
 def get_chroma_client() -> chromadb.ClientAPI:
-    """Return a persistent ChromaDB client."""
-    path = get_env("CHROMA_PATH", "./data/chroma_db")
-    return chromadb.PersistentClient(path=path)
+    """Return a singleton persistent ChromaDB client."""
+    global _chroma_client
+    if _chroma_client is None:
+        path = get_env("CHROMA_PATH", "./data/chroma_db")
+        _chroma_client = chromadb.PersistentClient(path=path)
+    return _chroma_client
 
 
 def get_or_create_collection(

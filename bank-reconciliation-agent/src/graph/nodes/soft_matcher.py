@@ -1,12 +1,12 @@
-"""Soft matcher node — RAG context + rapidfuzz for fuzzy matching."""
+"""Soft matcher node — rapidfuzz-based fuzzy matching with composite scoring."""
 
+from datetime import date as d_type
 from typing import Any
 
 from rapidfuzz import fuzz
 
 from src.graph.state import ReconciliationState
 from src.matching_engine.models import MatchResult
-from src.rag.retriever import retrieve
 from src.utils.config import get_thresholds
 
 
@@ -15,6 +15,7 @@ def soft_matcher(state: ReconciliationState) -> dict[str, Any]:
     cfg = get_thresholds()
     min_confidence = cfg["confidence"]["soft_match_min"]
     weights = cfg["matching"]["weights"]
+    date_tol_days = cfg["matching"]["date_tolerance_days"]
 
     unmatched_ledger = list(state.get("unmatched_ledger", []))
     unmatched_bank = list(state.get("unmatched_bank", []))
@@ -44,8 +45,7 @@ def soft_matcher(state: ReconciliationState) -> dict[str, Any]:
                 b_dict.get("description", ""),
             ) / 100.0
 
-            # Date similarity — crude: 1.0 if same day, decreasing
-            from datetime import date as d_type
+            # Date similarity — use config tolerance window
             l_date = l_dict.get("date")
             b_date = b_dict.get("date")
             if isinstance(l_date, str):
@@ -54,7 +54,12 @@ def soft_matcher(state: ReconciliationState) -> dict[str, Any]:
                 b_date = d_type.fromisoformat(b_date)
             if l_date and b_date:
                 day_diff = abs((l_date - b_date).days)
-                date_score = max(0.0, 1.0 - day_diff / 10.0)
+                if day_diff == 0:
+                    date_score = 1.0
+                elif day_diff <= date_tol_days:
+                    date_score = 1.0 - (day_diff / (date_tol_days + 1))
+                else:
+                    date_score = max(0.0, 1.0 - day_diff / (date_tol_days * 5))
             else:
                 date_score = 0.0
 

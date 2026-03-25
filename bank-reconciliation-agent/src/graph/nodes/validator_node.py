@@ -22,17 +22,32 @@ def validator_node(state: ReconciliationState) -> dict[str, Any]:
     confidence_scores: dict[str, float] = dict(state.get("confidence_scores", {}))
     human_review_queue = list(state.get("human_review_queue", []))
 
-    # Validate soft match candidates
+    # Deduplicate soft match candidates — keep highest confidence per ledger_id
+    seen_ledger_ids: dict[str, float] = {}
+    deduped_candidates = []
     for match in state.get("soft_match_candidates", []):
         try:
             if isinstance(match, MatchResult):
                 m = match
             else:
                 m = MatchResult(**match)
-            validation_results["valid"].append(m.model_dump())
-            confidence_scores[f"{m.ledger_id}:{m.bank_id}"] = m.confidence
+            lid = m.ledger_id
+            if lid in seen_ledger_ids:
+                if m.confidence > seen_ledger_ids[lid]:
+                    # Replace old with higher-confidence match
+                    deduped_candidates = [c for c in deduped_candidates if c.ledger_id != lid]
+                    deduped_candidates.append(m)
+                    seen_ledger_ids[lid] = m.confidence
+            else:
+                deduped_candidates.append(m)
+                seen_ledger_ids[lid] = m.confidence
         except Exception as e:
             validation_results["invalid"].append({"data": str(match), "error": str(e)})
+
+    # Validate deduplicated candidates
+    for m in deduped_candidates:
+        validation_results["valid"].append(m.model_dump())
+        confidence_scores[f"{m.ledger_id}:{m.bank_id}"] = m.confidence
 
     # Route low-confidence exceptions to human review
     for exc in state.get("exceptions", []):
