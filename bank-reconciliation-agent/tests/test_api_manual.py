@@ -1,4 +1,8 @@
-"""Comprehensive API functionality test script."""
+"""Comprehensive API functionality test script.
+
+Run manually:  python tests/test_api_manual.py
+NOT collected by pytest (guarded by ``if __name__``).
+"""
 import json
 import sys
 import requests
@@ -7,7 +11,7 @@ BASE = "http://127.0.0.1:8001"
 results = []
 
 
-def test(name, fn):
+def _run_test(name, fn):
     try:
         passed, detail = fn()
         status = "PASS" if passed else "FAIL"
@@ -19,16 +23,14 @@ def test(name, fn):
 
 
 # ── Test 1: Dashboard / List Documents (empty) ──
-def test_list_docs_initial():
+def _manual_test_list_docs_initial():
     r = requests.get(f"{BASE}/knowledge-base/documents")
     assert r.status_code == 200
     return True, f"Status 200, {len(r.json())} docs"
 
-test("1. List Documents (initial)", test_list_docs_initial)
-
 
 # ── Test 2: Upload text document to KB ──
-def test_upload_txt():
+def _manual_test_upload_txt():
     content = (
         "Standard Operating Procedure: Daily Bank Reconciliation\n\n"
         "Step 1: Download the bank statement for the previous business day.\n"
@@ -45,11 +47,9 @@ def test_upload_txt():
     data = r.json()
     return data["status"] == "ingested", f"Ingested {data['chunk_count']} chunks, hash={data['content_hash']}"
 
-test("2. Upload Text Document", test_upload_txt)
-
 
 # ── Test 3: Upload duplicate document ──
-def test_upload_duplicate():
+def _manual_test_upload_duplicate():
     content = (
         "Standard Operating Procedure: Daily Bank Reconciliation\n\n"
         "Step 1: Download the bank statement for the previous business day.\n"
@@ -65,21 +65,17 @@ def test_upload_duplicate():
     assert r.status_code == 200
     return r.json()["status"] == "already_exists", f"Correctly detected duplicate"
 
-test("3. Upload Duplicate Detection", test_upload_duplicate)
-
 
 # ── Test 4: List Documents after upload ──
-def test_list_docs_after():
+def _manual_test_list_docs_after():
     r = requests.get(f"{BASE}/knowledge-base/documents")
     assert r.status_code == 200
     docs = r.json()
     return len(docs) >= 1, f"Found {len(docs)} document(s)"
 
-test("4. List Documents (after upload)", test_list_docs_after)
-
 
 # ── Test 5: Search knowledge base ──
-def test_search_kb():
+def _manual_test_search_kb():
     r = requests.get(f"{BASE}/knowledge-base/search", params={"q": "reconciliation steps", "n": 5})
     assert r.status_code == 200
     hits = r.json()
@@ -88,11 +84,9 @@ def test_search_kb():
         return True, f"{len(hits)} results, top similarity={top['similarity']}"
     return False, "No results"
 
-test("5. Knowledge Base Search", test_search_kb)
-
 
 # ── Test 6: Reconciliation with bank + ledger CSVs ──
-def test_reconciliation():
+def _manual_test_reconciliation():
     bank_path = r"d:\personal_project\bank-reconciliation-agent\data\test_samples\bank_statement.csv"
     ledger_path = r"d:\personal_project\bank-reconciliation-agent\data\test_samples\ledger.csv"
     
@@ -121,11 +115,9 @@ def test_reconciliation():
     )
     return True, detail
 
-test("6. Reconciliation (bank + ledger)", test_reconciliation)
-
 
 # ── Test 7: Reconciliation status ──
-def test_reconciliation_status():
+def _manual_test_reconciliation_status():
     # Run a reconciliation first
     bank_path = r"d:\personal_project\bank-reconciliation-agent\data\test_samples\bank_statement.csv"
     with open(bank_path, "rb") as bf:
@@ -139,21 +131,17 @@ def test_reconciliation_status():
     status_data = sr.json()
     return status_data["status"] in ("completed", "running", "failed"), f"Status: {status_data['status']}"
 
-test("7. Reconciliation Status Check", test_reconciliation_status)
-
 
 # ── Test 8: Exception Queue ──
-def test_exception_queue():
+def _manual_test_exception_queue():
     r = requests.get(f"{BASE}/exceptions/queue")
     assert r.status_code == 200
     items = r.json()
     return True, f"{len(items)} pending exceptions"
 
-test("8. Exception Queue", test_exception_queue)
-
 
 # ── Test 9: Approve Exception ──
-def test_approve_exception():
+def _manual_test_approve_exception():
     r = requests.get(f"{BASE}/exceptions/queue")
     items = r.json()
     if not items:
@@ -164,11 +152,9 @@ def test_approve_exception():
     assert ar.status_code == 200
     return ar.json()["status"] == "approved", f"Exception {exc_id[:8]}... approved"
 
-test("9. Approve Exception", test_approve_exception)
-
 
 # ── Test 10: Reject Exception ──
-def test_reject_exception():
+def _manual_test_reject_exception():
     r = requests.get(f"{BASE}/exceptions/queue")
     items = r.json()
     if not items:
@@ -179,28 +165,22 @@ def test_reject_exception():
     assert rr.status_code == 200
     return rr.json()["status"] == "rejected", f"Exception {exc_id[:8]}... rejected"
 
-test("10. Reject Exception", test_reject_exception)
-
 
 # ── Test 11: Unsupported file upload ──
-def test_unsupported_file():
+def _manual_test_unsupported_file():
     files = {"file": ("bad.exe", b"fake", "application/octet-stream")}
     r = requests.post(f"{BASE}/knowledge-base/upload", files=files)
     return r.status_code == 400, f"Correctly rejected with status {r.status_code}"
 
-test("11. Reject Unsupported File Type", test_unsupported_file)
-
 
 # ── Test 12: 404 for non-existent run ──
-def test_nonexistent_run():
+def _manual_test_nonexistent_run():
     r = requests.get(f"{BASE}/reconcile/fake-id/status")
     return r.status_code == 404, f"Correctly returned 404"
 
-test("12. Non-existent Run Returns 404", test_nonexistent_run)
-
 
 # ── Test 13: Delete Document ──
-def test_delete_doc():
+def _manual_test_delete_doc():
     r = requests.get(f"{BASE}/knowledge-base/documents")
     docs = r.json()
     if not docs:
@@ -213,11 +193,9 @@ def test_delete_doc():
     assert dr.status_code == 200
     return dr.json()["deleted_chunks"] > 0, f"Deleted {dr.json()['deleted_chunks']} chunks of {doc['filename']}"
 
-test("13. Delete Document", test_delete_doc)
-
 
 # ── Test 14: Search with filename filter ──
-def test_search_with_filter():
+def _manual_test_search_with_filter():
     # Upload a doc first
     files = {"file": ("filter_test.txt", b"Bank reconciliation policy document for testing search filters", "text/plain")}
     requests.post(f"{BASE}/knowledge-base/upload", files=files)
@@ -227,11 +205,9 @@ def test_search_with_filter():
     hits = r.json()
     return len(hits) > 0, f"{len(hits)} results with filename filter"
 
-test("14. Search with Filename Filter", test_search_with_filter)
-
 
 # ── Test 15: Reconciliation with bank-only (no ledger) ──
-def test_bank_only_reconciliation():
+def _manual_test_bank_only_reconciliation():
     bank_path = r"d:\personal_project\bank-reconciliation-agent\data\test_samples\bank_statement.csv"
     with open(bank_path, "rb") as bf:
         files = {"file": ("bank_statement.csv", bf, "text/csv")}
@@ -244,26 +220,45 @@ def test_bank_only_reconciliation():
     report = rr.json()
     return True, f"Bank-only: matched={report['matched_count']}, unmatched_bank={report['unmatched_bank_count']}"
 
-test("15. Reconciliation (bank only, no ledger)", test_bank_only_reconciliation)
+
+def main():
+    _run_test("1. List Documents (initial)", _manual_test_list_docs_initial)
+    _run_test("2. Upload Text Document", _manual_test_upload_txt)
+    _run_test("3. Upload Duplicate Detection", _manual_test_upload_duplicate)
+    _run_test("4. List Documents (after upload)", _manual_test_list_docs_after)
+    _run_test("5. Knowledge Base Search", _manual_test_search_kb)
+    _run_test("6. Reconciliation (bank + ledger)", _manual_test_reconciliation)
+    _run_test("7. Reconciliation Status Check", _manual_test_reconciliation_status)
+    _run_test("8. Exception Queue", _manual_test_exception_queue)
+    _run_test("9. Approve Exception", _manual_test_approve_exception)
+    _run_test("10. Reject Exception", _manual_test_reject_exception)
+    _run_test("11. Reject Unsupported File Type", _manual_test_unsupported_file)
+    _run_test("12. Non-existent Run Returns 404", _manual_test_nonexistent_run)
+    _run_test("13. Delete Document", _manual_test_delete_doc)
+    _run_test("14. Search with Filename Filter", _manual_test_search_with_filter)
+    _run_test("15. Reconciliation (bank only, no ledger)", _manual_test_bank_only_reconciliation)
+
+    # ── Summary ──
+    print("\n" + "=" * 60)
+    print("SUMMARY")
+    print("=" * 60)
+    passed = sum(1 for r in results if r["status"] == "PASS")
+    failed = sum(1 for r in results if r["status"] == "FAIL")
+    errors = sum(1 for r in results if r["status"] == "ERROR")
+    total = len(results)
+    print(f"Total: {total} | Passed: {passed} | Failed: {failed} | Errors: {errors}")
+    print("=" * 60)
+
+    for r in results:
+        icon = "✓" if r["status"] == "PASS" else ("✗" if r["status"] == "FAIL" else "!")
+        print(f"  {icon} {r['name']}: {r['detail']}")
+
+    if failed + errors > 0:
+        print("\nSome tests failed! Review details above.")
+        sys.exit(1)
+    else:
+        print("\nAll tests passed!")
 
 
-# ── Summary ──
-print("\n" + "=" * 60)
-print("SUMMARY")
-print("=" * 60)
-passed = sum(1 for r in results if r["status"] == "PASS")
-failed = sum(1 for r in results if r["status"] == "FAIL")
-errors = sum(1 for r in results if r["status"] == "ERROR")
-total = len(results)
-print(f"Total: {total} | Passed: {passed} | Failed: {failed} | Errors: {errors}")
-print("=" * 60)
-
-for r in results:
-    icon = "✓" if r["status"] == "PASS" else ("✗" if r["status"] == "FAIL" else "!")
-    print(f"  {icon} {r['name']}: {r['detail']}")
-
-if failed + errors > 0:
-    print("\nSome tests failed! Review details above.")
-    sys.exit(1)
-else:
-    print("\nAll tests passed!")
+if __name__ == "__main__":
+    main()
