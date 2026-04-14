@@ -1,4 +1,4 @@
-"""Knowledge base document manager — ingest, list, delete documents in ChromaDB."""
+"""Knowledge base document manager — ingest, list, delete, query with reranking & cache."""
 
 import datetime
 from pathlib import Path
@@ -6,6 +6,7 @@ from typing import Any, BinaryIO
 
 import chromadb
 
+from src.rag.cache import cache_get, cache_put
 from src.rag.collection_manager import get_chroma_client, get_or_create_collection
 from src.rag.document_loader import (
     chunk_text,
@@ -172,16 +173,36 @@ def query_knowledge_base(
     n_results: int = 5,
     filename_filter: str | None = None,
     client: chromadb.ClientAPI | None = None,
+    rerank: bool = False,
 ) -> list[dict[str, Any]]:
-    """Query the knowledge base with optional filename filter."""
+    """Query the knowledge base with optional filename filter, reranking, and caching.
+
+    Args:
+        query_text: The search query.
+        n_results: Number of results to return.
+        filename_filter: Optional filename to restrict results.
+        client: Optional ChromaDB client.
+        rerank: If True, rerank results using LLM cross-encoder scoring.
+
+    Returns:
+        List of chunk dicts with similarity scores.
+    """
+    # Check cache first
+    cached = cache_get(query_text, n_results, filename_filter, rerank)
+    if cached is not None:
+        return cached
+
     if client is None:
         client = get_chroma_client()
 
     col = get_or_create_collection(client, COLLECTION_NAME)
 
+    # Fetch more candidates when reranking to improve recall
+    fetch_n = n_results * 3 if rerank else n_results
+
     query_params: dict[str, Any] = {
         "query_texts": [query_text],
-        "n_results": n_results,
+        "n_results": fetch_n,
     }
     if filename_filter:
         query_params["where"] = {"filename": filename_filter}
@@ -204,6 +225,16 @@ def query_knowledge_base(
             "distance": distance,
             "similarity": round(similarity, 4),
         })
+
+    # Apply reranking if requested
+    if rerank and output:
+        from src.rag.reranker import rerank as rerank_fn
+        output = rerank_fn(query_text, output, top_k=n_results)
+    else:
+        output = output[:n_results]
+
+    # Store in cache
+    cache_put(query_text, n_results, output, filename_filter, rerank)
 
     return output
 

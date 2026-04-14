@@ -2,8 +2,11 @@
 
 import csv
 import io
+import logging
 import uuid
+from contextlib import asynccontextmanager
 from enum import Enum
+from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
@@ -22,15 +25,51 @@ from src.rag.knowledge_base import (
     list_documents,
     query_knowledge_base,
 )
+from src.rag.cache import cache_clear, cache_stats
 
-app = FastAPI(title="SmartBots Bank Reconciliation", version="0.1.0")
+logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Auto-ingest reference documents on startup
+# ---------------------------------------------------------------------------
+
+_AUTO_INGEST_PATHS = [
+    Path(r"D:\personal_project\NIPS-2017-attention-is-all-you-need-Paper.pdf"),
+    Path(r"D:\Final Project\Geolocational Data Analysis.pdf"),
+    Path(r"C:\Users\KARTAVYA\Downloads\ML_Engineer_Detailed_Cheat_Sheet.pdf"),
+]
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup: auto-ingest reference documents into the knowledge base."""
+    for doc_path in _AUTO_INGEST_PATHS:
+        if doc_path.exists():
+            try:
+                result = ingest_document(doc_path.name, doc_path)
+                status = result.get("status", "unknown")
+                logger.info(
+                    "Auto-ingest %s: %s (%d chunks)",
+                    doc_path.name, status, result.get("chunk_count", 0),
+                )
+            except Exception as e:
+                logger.warning("Auto-ingest failed for %s: %s", doc_path.name, e)
+        else:
+            logger.warning("Auto-ingest file not found: %s", doc_path)
+    yield
+
+
+app = FastAPI(
+    title="SmartBots Bank Reconciliation",
+    version="0.1.0",
+    lifespan=lifespan,
+)
 
 # ---------------------------------------------------------------------------
 # In-memory stores (single-process local dev)
 # ---------------------------------------------------------------------------
 
 _runs: dict[str, dict[str, Any]] = {}
-_exceptions: dict[str, dict[str, Any]] = {}  # exception_id → exception data
 
 
 class RunStatus(str, Enum):
@@ -47,15 +86,6 @@ class RunResponse(BaseModel):
 class StatusResponse(BaseModel):
     run_id: str
     status: RunStatus
-
-
-class ExceptionAction(BaseModel):
-    reason: str = ""
-
-
-class ManualMatchBody(BaseModel):
-    ledger_id: str
-    bank_id: str
 
 
 # ---------------------------------------------------------------------------
@@ -110,7 +140,7 @@ async def reconcile(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-    _runs[run_id] = {"status": RunStatus.running, "report": None, "exceptions": {}}
+    _runs[run_id] = {"status": RunStatus.running, "report": None}
 
     try:
         bank_transactions: list[Transaction] = []
@@ -139,38 +169,6 @@ async def reconcile(
             bank_name=bank_name,
         )
 
-        # Build exception queue
-        exceptions_dict: dict[str, dict[str, Any]] = {}
-        for txn in result["unmatched_ledger"]:
-            exc_id = str(uuid.uuid4())
-            exc = {
-                "id": exc_id,
-                "run_id": run_id,
-                "transaction_id": txn.id,
-                "source": "ledger",
-                "status": "pending",
-                "amount": str(txn.amount),
-                "date": str(txn.date),
-                "description": txn.description,
-            }
-            exceptions_dict[exc_id] = exc
-            _exceptions[exc_id] = exc
-
-        for txn in result["unmatched_bank"]:
-            exc_id = str(uuid.uuid4())
-            exc = {
-                "id": exc_id,
-                "run_id": run_id,
-                "transaction_id": txn.id,
-                "source": "bank",
-                "status": "pending",
-                "amount": str(txn.amount),
-                "date": str(txn.date),
-                "description": txn.description,
-            }
-            exceptions_dict[exc_id] = exc
-            _exceptions[exc_id] = exc
-
         report = {
             "run_id": run_id,
             "bank": bank_name,
@@ -178,12 +176,10 @@ async def reconcile(
             "unmatched_ledger_count": len(result["unmatched_ledger"]),
             "unmatched_bank_count": len(result["unmatched_bank"]),
             "matches": [m.model_dump(mode="json") for m in result["matched_pairs"]],
-            "exception_ids": list(exceptions_dict.keys()),
         }
 
         _runs[run_id]["status"] = RunStatus.completed
         _runs[run_id]["report"] = report
-        _runs[run_id]["exceptions"] = exceptions_dict
 
     except Exception as e:
         _runs[run_id]["status"] = RunStatus.failed
@@ -207,42 +203,6 @@ async def get_report(run_id: str):
     if run["status"] != RunStatus.completed:
         raise HTTPException(status_code=409, detail=f"Run status: {run['status']}")
     return run["report"]
-
-
-@app.get("/exceptions/queue")
-async def exception_queue():
-    """List all pending human review items."""
-    return [exc for exc in _exceptions.values() if exc["status"] == "pending"]
-
-
-@app.post("/exceptions/{exception_id}/approve")
-async def approve_exception(exception_id: str, body: ExceptionAction | None = None):
-    if exception_id not in _exceptions:
-        raise HTTPException(status_code=404, detail="Exception not found")
-    _exceptions[exception_id]["status"] = "approved"
-    _exceptions[exception_id]["reason"] = body.reason if body else ""
-    return _exceptions[exception_id]
-
-
-@app.post("/exceptions/{exception_id}/reject")
-async def reject_exception(exception_id: str, body: ExceptionAction | None = None):
-    if exception_id not in _exceptions:
-        raise HTTPException(status_code=404, detail="Exception not found")
-    _exceptions[exception_id]["status"] = "rejected"
-    _exceptions[exception_id]["reason"] = body.reason if body else ""
-    return _exceptions[exception_id]
-
-
-@app.post("/exceptions/{exception_id}/manual-match")
-async def manual_match(exception_id: str, body: ManualMatchBody):
-    if exception_id not in _exceptions:
-        raise HTTPException(status_code=404, detail="Exception not found")
-    _exceptions[exception_id]["status"] = "manually_matched"
-    _exceptions[exception_id]["manual_match"] = {
-        "ledger_id": body.ledger_id,
-        "bank_id": body.bank_id,
-    }
-    return _exceptions[exception_id]
 
 
 # ---------------------------------------------------------------------------
@@ -294,9 +254,10 @@ async def kb_search(
     n: int = Query(5, ge=1, le=50),
     filename: str | None = Query(None),
     summarize: bool = Query(False),
+    rerank: bool = Query(False),
 ):
-    """Search the knowledge base for relevant chunks, optionally with an LLM summary."""
-    chunks = query_knowledge_base(q, n_results=n, filename_filter=filename)
+    """Search the knowledge base for relevant chunks, optionally with reranking and LLM summary."""
+    chunks = query_knowledge_base(q, n_results=n, filename_filter=filename, rerank=rerank)
 
     if not summarize or not chunks:
         return {"chunks": chunks, "summary": None}
@@ -344,3 +305,21 @@ async def kb_search(
         summary = f"Summary generation failed: {e}"
 
     return {"chunks": chunks, "summary": summary}
+
+
+# ---------------------------------------------------------------------------
+# Cache Management Endpoints
+# ---------------------------------------------------------------------------
+
+
+@app.get("/cache/stats")
+async def get_cache_stats():
+    """Return cache statistics."""
+    return cache_stats()
+
+
+@app.post("/cache/clear")
+async def clear_cache():
+    """Clear the semantic query cache."""
+    evicted = cache_clear()
+    return {"cleared": evicted}

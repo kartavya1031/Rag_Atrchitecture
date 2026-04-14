@@ -37,7 +37,6 @@ pages = [
     "Dashboard",
     "Document Management",
     "Reconciliation",
-    "Exception Queue",
     "Knowledge Base Search",
 ]
 
@@ -56,7 +55,6 @@ if page == "Dashboard":
     This dashboard provides an interface for:
     - **Document Management** — Upload, browse, and delete documents (PDF, Word, Excel, text)
     - **Reconciliation** — Upload bank/ledger files and run matching
-    - **Exception Queue** — Review and resolve unmatched transactions
     - **Knowledge Base Search** — Query ingested documents for relevant information
 
     Select a page from the sidebar to get started.
@@ -214,80 +212,12 @@ elif page == "Reconciliation":
                         if report.get("matches"):
                             st.subheader("Matched Pairs")
                             st.json(report["matches"][:20])  # show first 20
-
-                        if report.get("exception_ids"):
-                            st.subheader("Exceptions")
-                            st.write(f"{len(report['exception_ids'])} exceptions generated — see Exception Queue.")
                     else:
                         st.warning(f"Report not ready: {rr.text}")
                 else:
                     st.error(f"Reconciliation failed: {r.text}")
             except requests.ConnectionError:
                 st.error("Cannot connect to API.")
-
-
-# ===================================================================
-# PAGE: Exception Queue
-# ===================================================================
-
-elif page == "Exception Queue":
-    st.title("⚠️ Exception Queue")
-    st.markdown("Review pending exceptions and take action.")
-    st.markdown("---")
-
-    try:
-        r = _api("get", "/exceptions/queue")
-        if r.status_code == 200:
-            items = r.json()
-            if not items:
-                st.info("No pending exceptions.")
-            else:
-                st.write(f"**{len(items)}** pending exceptions")
-                for item in items:
-                    with st.expander(
-                        f"Exception {item['id'][:8]}... | {item['source']} | ${item['amount']} | {item['date']}"
-                    ):
-                        st.markdown(f"""
-                        - **Transaction ID:** {item['transaction_id']}
-                        - **Source:** {item['source']}
-                        - **Amount:** {item['amount']}
-                        - **Date:** {item['date']}
-                        - **Description:** {item['description']}
-                        - **Status:** {item['status']}
-                        """)
-
-                        reason = st.text_input("Reason", key=f"reason_{item['id']}")
-                        acol1, acol2 = st.columns(2)
-
-                        with acol1:
-                            if st.button("Approve", key=f"approve_{item['id']}"):
-                                ar = _api(
-                                    "post",
-                                    f"/exceptions/{item['id']}/approve",
-                                    json={"reason": reason},
-                                )
-                                if ar.status_code == 200:
-                                    st.success("Approved!")
-                                    st.rerun()
-                                else:
-                                    st.error(ar.text)
-
-                        with acol2:
-                            if st.button("Reject", key=f"reject_{item['id']}"):
-                                rr = _api(
-                                    "post",
-                                    f"/exceptions/{item['id']}/reject",
-                                    json={"reason": reason},
-                                )
-                                if rr.status_code == 200:
-                                    st.success("Rejected!")
-                                    st.rerun()
-                                else:
-                                    st.error(rr.text)
-        else:
-            st.error(f"Failed: {r.text}")
-    except requests.ConnectionError:
-        st.warning("Cannot connect to API.")
 
 
 # ===================================================================
@@ -304,12 +234,21 @@ elif page == "Knowledge Base Search":
 
     fname_filter = st.text_input("Filter by filename (optional)", placeholder="e.g. attention-paper.pdf")
 
-    generate_summary = st.checkbox("Generate AI Summary", value=True, help="Use LLM to synthesize a summary from the retrieved chunks")
+    col_opt1, col_opt2 = st.columns(2)
+    with col_opt1:
+        generate_summary = st.checkbox("Generate AI Summary", value=True, help="Use LLM to synthesize a summary from the retrieved chunks")
+    with col_opt2:
+        use_reranking = st.checkbox("Enable Reranking", value=False, help="Rerank results using LLM cross-encoder scoring for better relevance")
 
     if query and st.button("Search", type="primary"):
         with st.spinner("Searching..." if not generate_summary else "Searching & summarizing..."):
             try:
-                params = {"q": query, "n": n_results, "summarize": str(generate_summary).lower()}
+                params = {
+                    "q": query,
+                    "n": n_results,
+                    "summarize": str(generate_summary).lower(),
+                    "rerank": str(use_reranking).lower(),
+                }
                 if fname_filter:
                     params["filename"] = fname_filter
 

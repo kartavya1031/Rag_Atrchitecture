@@ -5,17 +5,15 @@ import io
 import pytest
 from fastapi.testclient import TestClient
 
-from src.workflow.api import app, _runs, _exceptions
+from src.workflow.api import app, _runs
 
 
 @pytest.fixture(autouse=True)
 def _clear_stores():
     """Clear in-memory stores between tests."""
     _runs.clear()
-    _exceptions.clear()
     yield
     _runs.clear()
-    _exceptions.clear()
 
 
 @pytest.fixture()
@@ -101,81 +99,4 @@ class TestStatusEndpoint:
 
     def test_report_not_found(self, client):
         resp = client.get("/reconcile/nonexistent/report")
-        assert resp.status_code == 404
-
-
-class TestExceptionQueue:
-    def test_queue_populated_after_reconcile(self, client):
-        client.post(
-            "/reconcile",
-            files={
-                "file": ("bank.csv", BANK_CSV, "text/csv"),
-                "ledger_file": ("ledger.csv", LEDGER_CSV, "text/csv"),
-            },
-            data={"bank_name": "Generic"},
-        )
-        resp = client.get("/exceptions/queue")
-        assert resp.status_code == 200
-        queue = resp.json()
-        # Should have 2 exceptions (1 unmatched ledger + 1 unmatched bank)
-        assert len(queue) == 2
-
-    def test_approve_exception(self, client):
-        # Reconcile first
-        client.post(
-            "/reconcile",
-            files={
-                "file": ("bank.csv", BANK_CSV, "text/csv"),
-                "ledger_file": ("ledger.csv", LEDGER_CSV, "text/csv"),
-            },
-            data={"bank_name": "Generic"},
-        )
-        queue = client.get("/exceptions/queue").json()
-        exc_id = queue[0]["id"]
-
-        resp = client.post(f"/exceptions/{exc_id}/approve", json={"reason": "OK"})
-        assert resp.status_code == 200
-        assert resp.json()["status"] == "approved"
-
-        # Queue should have one less pending
-        queue_after = client.get("/exceptions/queue").json()
-        assert len(queue_after) == 1
-
-    def test_reject_exception(self, client):
-        client.post(
-            "/reconcile",
-            files={
-                "file": ("bank.csv", BANK_CSV, "text/csv"),
-                "ledger_file": ("ledger.csv", LEDGER_CSV, "text/csv"),
-            },
-            data={"bank_name": "Generic"},
-        )
-        queue = client.get("/exceptions/queue").json()
-        exc_id = queue[0]["id"]
-
-        resp = client.post(f"/exceptions/{exc_id}/reject", json={"reason": "Invalid"})
-        assert resp.status_code == 200
-        assert resp.json()["status"] == "rejected"
-
-    def test_manual_match(self, client):
-        client.post(
-            "/reconcile",
-            files={
-                "file": ("bank.csv", BANK_CSV, "text/csv"),
-                "ledger_file": ("ledger.csv", LEDGER_CSV, "text/csv"),
-            },
-            data={"bank_name": "Generic"},
-        )
-        queue = client.get("/exceptions/queue").json()
-        exc_id = queue[0]["id"]
-
-        resp = client.post(
-            f"/exceptions/{exc_id}/manual-match",
-            json={"ledger_id": "L4", "bank_id": "B3"},
-        )
-        assert resp.status_code == 200
-        assert resp.json()["status"] == "manually_matched"
-
-    def test_exception_not_found(self, client):
-        resp = client.post("/exceptions/fake-id/approve")
         assert resp.status_code == 404

@@ -110,8 +110,7 @@ def _manual_test_reconciliation():
         f"run_id={run_id[:8]}..., "
         f"matched={report['matched_count']}, "
         f"unmatched_ledger={report['unmatched_ledger_count']}, "
-        f"unmatched_bank={report['unmatched_bank_count']}, "
-        f"exceptions={len(report.get('exception_ids', []))}"
+        f"unmatched_bank={report['unmatched_bank_count']}"
     )
     return True, detail
 
@@ -132,54 +131,20 @@ def _manual_test_reconciliation_status():
     return status_data["status"] in ("completed", "running", "failed"), f"Status: {status_data['status']}"
 
 
-# ── Test 8: Exception Queue ──
-def _manual_test_exception_queue():
-    r = requests.get(f"{BASE}/exceptions/queue")
-    assert r.status_code == 200
-    items = r.json()
-    return True, f"{len(items)} pending exceptions"
-
-
-# ── Test 9: Approve Exception ──
-def _manual_test_approve_exception():
-    r = requests.get(f"{BASE}/exceptions/queue")
-    items = r.json()
-    if not items:
-        return True, "No exceptions to approve (queue empty)"
-    
-    exc_id = items[0]["id"]
-    ar = requests.post(f"{BASE}/exceptions/{exc_id}/approve", json={"reason": "Test approval"})
-    assert ar.status_code == 200
-    return ar.json()["status"] == "approved", f"Exception {exc_id[:8]}... approved"
-
-
-# ── Test 10: Reject Exception ──
-def _manual_test_reject_exception():
-    r = requests.get(f"{BASE}/exceptions/queue")
-    items = r.json()
-    if not items:
-        return True, "No exceptions to reject (queue empty)"
-    
-    exc_id = items[0]["id"]
-    rr = requests.post(f"{BASE}/exceptions/{exc_id}/reject", json={"reason": "Test rejection"})
-    assert rr.status_code == 200
-    return rr.json()["status"] == "rejected", f"Exception {exc_id[:8]}... rejected"
-
-
-# ── Test 11: Unsupported file upload ──
+# ── Test 8: Unsupported file upload ──
 def _manual_test_unsupported_file():
     files = {"file": ("bad.exe", b"fake", "application/octet-stream")}
     r = requests.post(f"{BASE}/knowledge-base/upload", files=files)
     return r.status_code == 400, f"Correctly rejected with status {r.status_code}"
 
 
-# ── Test 12: 404 for non-existent run ──
+# ── Test 9: 404 for non-existent run ──
 def _manual_test_nonexistent_run():
     r = requests.get(f"{BASE}/reconcile/fake-id/status")
     return r.status_code == 404, f"Correctly returned 404"
 
 
-# ── Test 13: Delete Document ──
+# ── Test 10: Delete Document ──
 def _manual_test_delete_doc():
     r = requests.get(f"{BASE}/knowledge-base/documents")
     docs = r.json()
@@ -194,7 +159,7 @@ def _manual_test_delete_doc():
     return dr.json()["deleted_chunks"] > 0, f"Deleted {dr.json()['deleted_chunks']} chunks of {doc['filename']}"
 
 
-# ── Test 14: Search with filename filter ──
+# ── Test 11: Search with filename filter ──
 def _manual_test_search_with_filter():
     # Upload a doc first
     files = {"file": ("filter_test.txt", b"Bank reconciliation policy document for testing search filters", "text/plain")}
@@ -206,7 +171,7 @@ def _manual_test_search_with_filter():
     return len(hits) > 0, f"{len(hits)} results with filename filter"
 
 
-# ── Test 15: Reconciliation with bank-only (no ledger) ──
+# ── Test 12: Reconciliation with bank-only (no ledger) ──
 def _manual_test_bank_only_reconciliation():
     bank_path = r"d:\personal_project\bank-reconciliation-agent\data\test_samples\bank_statement.csv"
     with open(bank_path, "rb") as bf:
@@ -229,14 +194,11 @@ def main():
     _run_test("5. Knowledge Base Search", _manual_test_search_kb)
     _run_test("6. Reconciliation (bank + ledger)", _manual_test_reconciliation)
     _run_test("7. Reconciliation Status Check", _manual_test_reconciliation_status)
-    _run_test("8. Exception Queue", _manual_test_exception_queue)
-    _run_test("9. Approve Exception", _manual_test_approve_exception)
-    _run_test("10. Reject Exception", _manual_test_reject_exception)
-    _run_test("11. Reject Unsupported File Type", _manual_test_unsupported_file)
-    _run_test("12. Non-existent Run Returns 404", _manual_test_nonexistent_run)
-    _run_test("13. Delete Document", _manual_test_delete_doc)
-    _run_test("14. Search with Filename Filter", _manual_test_search_with_filter)
-    _run_test("15. Reconciliation (bank only, no ledger)", _manual_test_bank_only_reconciliation)
+    _run_test("8. Reject Unsupported File Type", _manual_test_unsupported_file)
+    _run_test("9. Non-existent Run Returns 404", _manual_test_nonexistent_run)
+    _run_test("10. Delete Document", _manual_test_delete_doc)
+    _run_test("11. Search with Filename Filter", _manual_test_search_with_filter)
+    _run_test("12. Reconciliation (bank only, no ledger)", _manual_test_bank_only_reconciliation)
 
     # ── Summary ──
     print("\n" + "=" * 60)

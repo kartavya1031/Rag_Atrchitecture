@@ -75,3 +75,4 @@ pyyaml==6.0.2                   # Parse config/thresholds.yaml and bank_rules.ya
 tenacity==9.1.2                 # Retry logic for OpenAI API calls
 structlog==25.1.0               # Structured JSON logging
 rich==14.0.0                    # Pretty CLI output for local dev
+cachetools==5.5.2               # TTL cache for semantic query caching
